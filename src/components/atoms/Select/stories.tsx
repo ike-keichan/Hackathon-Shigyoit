@@ -1,5 +1,6 @@
-import { Select, SelectProps } from './index'
 import { Story } from '@storybook/react'
+
+import { Select, SelectProps } from './index'
 
 export default {
   component: Select,
