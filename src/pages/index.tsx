@@ -1,3 +1,5 @@
-export default function Home() {
-  return <div>aaaa</div>
+import { Home } from '@/components/templates/Home'
+
+export default function Root() {
+  return <Home />
 }
