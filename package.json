@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "check": "run-p lint format cspell type-check",
-    "fix": "run-p lint:fix format:fix cspell",
+    "fix": "run-p lint:fix format:fix cspell type-check",
     "lint": "eslint -c './.eslintrc.json' \"./src/**/*.{ts,tsx}\"",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier \"./src/**/*.{ts,tsx}\"",

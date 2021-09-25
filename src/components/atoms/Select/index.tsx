@@ -5,9 +5,9 @@ import { colors } from '../../../styles/colors'
 
 const { COLOR_61CACE, COLOR_CED2E3, COLOR_FFFFFF } = colors
 
-export type SelectProps = DetailedHTMLProps<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
+export type SelectProps = Omit<
+  DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>,
+  'ref'
 > & {
   options: Array<{ id: string; name: string }>
 }
