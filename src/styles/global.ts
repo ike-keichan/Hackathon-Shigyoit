@@ -1,3 +1,6 @@
+import React from 'react'
+
+
 html,
 body {
   padding: 0;
