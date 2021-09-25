@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, VFC, SelectHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-import { colors } from '../../../styles/colors'
+import { colors } from '@/styles/colors'
 
 const { COLOR_61CACE, COLOR_CED2E3, COLOR_FFFFFF } = colors
 
@@ -17,24 +17,30 @@ export const Select: VFC<SelectProps> = (props) => {
 
   return (
     <Root>
-      <StyledSelect {...selectProps}>
-        {options.map((option) => (
-          <option key={option.id} value={option.id}>
-            {option.name}
-          </option>
-        ))}
-      </StyledSelect>
+      <SelectWrapper>
+        <StyledSelect {...selectProps}>
+          {options.map((option) => (
+            <option key={option.id} value={option.id}>
+              {option.name}
+            </option>
+          ))}
+        </StyledSelect>
+      </SelectWrapper>
     </Root>
   )
 }
 
 const Root = styled.div`
+  position: relative;
+`
+
+const SelectWrapper = styled.div`
   background-color: ${COLOR_FFFFFF};
   border: 1px solid ${COLOR_CED2E3};
   border-radius: 4px;
   padding: 0 5px;
 
-  &::before {
+  ::before {
     background-color: ${COLOR_61CACE};
     border-radius: 0 3px 3px 0;
     content: '';
@@ -42,11 +48,11 @@ const Root = styled.div`
     min-height: 24px;
     position: absolute;
     pointer-events: none;
-    right: 17px;
+    right: 1px;
     width: 12px;
   }
 
-  &::after {
+  ::after {
     border-bottom: solid 2px ${COLOR_FFFFFF};
     border-right: solid 2px ${COLOR_FFFFFF};
     content: '';
@@ -54,9 +60,9 @@ const Root = styled.div`
     height: 3px;
     position: absolute;
     pointer-events: none;
-    top: 25px;
+    top: 40%;
     transform: rotate(45deg);
-    right: 20.5px;
+    right: 4px;
     width: 3px;
   }
 `
