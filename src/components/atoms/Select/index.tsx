@@ -38,7 +38,6 @@ const SelectWrapper = styled.div`
   background-color: ${COLOR_FFFFFF};
   border: 1px solid ${COLOR_CED2E3};
   border-radius: 4px;
-  padding: 0 5px;
 
   ::before {
     background-color: ${COLOR_61CACE};
@@ -71,5 +70,6 @@ const StyledSelect = styled.select`
   appearance: none;
   border: none;
   cursor: pointer;
+  min-height: 24px;
   width 100%;
 `
