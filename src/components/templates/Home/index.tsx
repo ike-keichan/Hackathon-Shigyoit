@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Select } from '@/components/atoms/Select'
 import { ChangePanel } from '@/components/organisms/ChangePanel'
 import { Footer } from '@/components/organisms/Footer'
+import { Header } from '@/components/organisms/Header'
 import { Status } from '@/components/organisms/Status'
 import { colors } from '@/styles/colors'
 
@@ -25,7 +26,7 @@ export const Home: VFC<HomeProps> = (props) => {
 
   return (
     <Root>
-      <div>header</div>
+      <Header />
       <SelectArea>
         <SelectTitle>天気によるあの人の気分</SelectTitle>
         <Select options={[]} />
@@ -52,7 +53,7 @@ const Root = styled.div`
 `
 
 const SelectArea = styled.div`
-  margin: 0 auto 25px;
+  margin: 20px auto 25px;
   width: 80%;
 
   > * + * {
@@ -86,6 +87,10 @@ const SelectTitle = styled.p`
 const StatusArea = styled.div`
   margin: 0 auto;
   width: 80%;
+
+  @media (min-width: 400px) {
+    width: 320px;
+  }
 `
 
 const PanelArea = styled.div`

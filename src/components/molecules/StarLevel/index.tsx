@@ -1,7 +1,8 @@
 import { VFC } from 'react'
 import styled from 'styled-components'
 
-import { VerySmileIcon } from '@/components/atoms/Icons/VerySmile'
+import { StarRegularIcon } from '@/components/atoms/Icons/StarRegular'
+import { StarSolidIcon } from '@/components/atoms/Icons/StarSolid'
 import { colors } from '@/styles/colors'
 
 const { COLOR_EB7676 } = colors
@@ -10,7 +11,6 @@ export type StarLevelProps = {
   level: number
 }
 
-// TODO: 置き換える
 export const StarLevel: VFC<StarLevelProps> = (props) => {
   const { level = 0 } = props
 
@@ -19,10 +19,10 @@ export const StarLevel: VFC<StarLevelProps> = (props) => {
   return (
     <Root>
       {[...Array(displayLevel)].map((_, index) => (
-        <VerySmileIcon key={index} />
+        <StarRegularIcon key={index} />
       ))}
       {[...Array(5 - displayLevel)].map((_, index) => (
-        <VerySmileIcon key={index} />
+        <StarSolidIcon key={index} />
       ))}
     </Root>
   )
