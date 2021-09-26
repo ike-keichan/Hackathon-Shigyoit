@@ -1,18 +1,15 @@
 import { Story } from '@storybook/react'
 
-import { Home, HomeProps } from './index'
+import { Status, StatusProps } from './index'
 
 export default {
-  component: Home,
-  title: 'templates/Home',
+  component: Status,
+  title: 'organisms/Status',
 }
 
-const Component: Story<HomeProps> = (args) => <Home {...args} />
+const Component: Story<StatusProps> = (args) => <Status {...args} />
 
 export const Base = Component.bind({})
-
-const rightContents = () => <div>right</div>
-const leftContents = () => <div>left</div>
 
 Base.args = {
   heading: '良いでしょう',
@@ -21,6 +18,4 @@ Base.args = {
   moodLevel: 4,
   workLevel: 3,
   weatherPainLevel: 2,
-  RightPanel: rightContents,
-  LeftPanel: leftContents,
 }
