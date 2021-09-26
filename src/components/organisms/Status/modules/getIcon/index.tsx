@@ -1,18 +1,23 @@
+import React from 'react'
+
+import { NormalIcon } from '@/components/atoms/Icons/Normal'
+import { SadIcon } from '@/components/atoms/Icons/Sad'
+import { SmileIcon } from '@/components/atoms/Icons/Smile'
+import { VerySadIcon } from '@/components/atoms/Icons/VerySad'
 import { VerySmileIcon } from '@/components/atoms/Icons/VerySmile'
 
 type GetIcon = (level: number) => any
 
-// TODO: 置き換える
 export const getIcon: GetIcon = (level) => {
   switch (level) {
     case 1:
-      return <VerySmileIcon />
+      return <VerySadIcon />
     case 2:
-      return <VerySmileIcon />
+      return <SadIcon />
     case 3:
-      return <VerySmileIcon />
+      return <NormalIcon />
     case 4:
-      return <VerySmileIcon />
+      return <SmileIcon />
     case 5:
       return <VerySmileIcon />
     default:
