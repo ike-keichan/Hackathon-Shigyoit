@@ -1,6 +1,7 @@
 import { VFC } from 'react'
 import styled from 'styled-components'
 
+import { Button } from '@/components/atoms/Button'
 import { Select } from '@/components/atoms/Select'
 import { ChangePanel } from '@/components/organisms/ChangePanel'
 import { Footer } from '@/components/organisms/Footer'
@@ -43,6 +44,15 @@ export const Home: VFC<HomeProps> = (props) => {
         <PanelTitle>今の世界</PanelTitle>
         <ChangePanel RightPanel={RightPanel} LeftPanel={LeftPanel}></ChangePanel>
       </PanelArea>
+      <ButtonArea>
+        <Button
+          onClick={() =>
+            (location.href = 'https://hackathon-shigyoit-1lq66lt3n-tenkibunn.vercel.app/')
+          }
+        >
+          あの人の気分を調べる
+        </Button>
+      </ButtonArea>
       <Footer />
     </Root>
   )
@@ -85,7 +95,7 @@ const SelectTitle = styled.p`
 `
 
 const StatusArea = styled.div`
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 80%;
 
   @media (min-width: 400px) {
@@ -103,4 +113,9 @@ const PanelTitle = styled.p`
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 15px;
+`
+
+const ButtonArea = styled.div`
+  margin: 20px auto 50px;
+  width: 80%;
 `

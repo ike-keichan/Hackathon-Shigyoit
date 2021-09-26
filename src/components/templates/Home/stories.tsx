@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react'
 
 import { Home, HomeProps } from './index'
+import { VerySadIcon } from '@/components/atoms/Icons/VerySad'
 
 export default {
   component: Home,
@@ -11,8 +12,12 @@ const Component: Story<HomeProps> = (args) => <Home {...args} />
 
 export const Base = Component.bind({})
 
-const rightContents = () => <div>right</div>
-const leftContents = () => <div>left</div>
+const rightContents = () => <img src={'/Sample1.png'} alt={'Sample1'} height="100%" width="100%" />
+const leftContents = () => (
+  <div>
+    <VerySadIcon />
+  </div>
+)
 
 Base.args = {
   heading: '良いでしょう',

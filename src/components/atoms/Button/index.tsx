@@ -21,6 +21,7 @@ export const Button: FC<ButtonProps> = (props) => {
 const StyledButton = styled.button`
     background-color:${COLOR_61CACE};
     border-color: transparent;
+    cursor: pointer;
     color: ${COLOR_FFFFFF};
     font-size: 20px;
     text-align: center;
