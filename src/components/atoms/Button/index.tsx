@@ -1,24 +1,21 @@
-import { DetailedHTMLProps, FC, ButtonHTMLAttributes } from "react";
+import { DetailedHTMLProps, FC, ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
+
 import { colors } from '@/styles/colors'
 
 const { COLOR_61CACE, COLOR_FFFFFF } = colors
 
 export type ButtonProps = Omit<
-    DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, 
-    'ref'
-    > & {
-    children: string
-};
+  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+  'ref'
+> & {
+  children: string
+}
 
 export const Button: FC<ButtonProps> = (props) => {
-    const { children, ...buttonProps} = props
+  const { children, ...buttonProps } = props
 
-    return(
-            <StyledButton {...buttonProps}>
-                {children}
-            </StyledButton>
-    )
+  return <StyledButton {...buttonProps}>{children}</StyledButton>
 }
 
 const StyledButton = styled.button`
