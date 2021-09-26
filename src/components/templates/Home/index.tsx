@@ -45,11 +45,7 @@ export const Home: VFC<HomeProps> = (props) => {
         <ChangePanel RightPanel={RightPanel} LeftPanel={LeftPanel}></ChangePanel>
       </PanelArea>
       <ButtonArea>
-        <Button
-          onClick={() =>
-            (location.href = 'https://hackathon-shigyoit-1lq66lt3n-tenkibunn.vercel.app/')
-          }
-        >
+        <Button onClick={() => (location.href = 'https://hackathon-shigyoit.vercel.app/')}>
           あの人の気分を調べる
         </Button>
       </ButtonArea>
