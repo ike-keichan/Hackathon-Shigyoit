@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, FC, ButtonHTMLAttributes } from "react";
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
+import { colors } from '@/styles/colors'
 
 const { COLOR_61CACE, COLOR_FFFFFF } = colors
 
@@ -23,7 +23,7 @@ export const Button: FC<ButtonProps> = (props) => {
 
 const StyledButton = styled.button`
     background-color:${COLOR_61CACE};
-    border-color: unset;
+    border-color: transparent;
     color: ${COLOR_FFFFFF};
     font-size: 20px;
     text-align: center;
