@@ -1,17 +1,28 @@
+import { VFC } from 'react'
 import styled from 'styled-components'
 
 import { Select } from '@/components/atoms/Select'
 import { ChangePanel } from '@/components/organisms/ChangePanel'
 import { Footer } from '@/components/organisms/Footer'
+import { Status } from '@/components/organisms/Status'
 import { colors } from '@/styles/colors'
 
 const { COLOR_878787, COLOR_FFFFFF } = colors
 
-// TODO: 仮置き
-const rightContents = () => <div>right</div>
-const leftContents = () => <div>left</div>
+export type HomeProps = {
+  heading: string
+  text: string
+  averageLevel: number
+  moodLevel: number
+  workLevel: number
+  weatherPainLevel: number
+  LeftPanel: VFC
+  RightPanel: VFC
+}
 
-export const Home = () => {
+export const Home: VFC<HomeProps> = (props) => {
+  const { LeftPanel, RightPanel, ...statusProps } = props
+
   return (
     <Root>
       <div>header</div>
@@ -24,9 +35,12 @@ export const Home = () => {
         <Select options={[]} />
         <Select options={[]} />
       </SelectArea>
+      <StatusArea>
+        <Status {...statusProps} />
+      </StatusArea>
       <PanelArea>
         <PanelTitle>今の世界</PanelTitle>
-        <ChangePanel RightPanel={rightContents} LeftPanel={leftContents}></ChangePanel>
+        <ChangePanel RightPanel={RightPanel} LeftPanel={LeftPanel}></ChangePanel>
       </PanelArea>
       <Footer />
     </Root>
@@ -67,6 +81,11 @@ const SelectTitle = styled.p`
   color: ${COLOR_878787};
   font-size: 16px;
   text-align: center;
+`
+
+const StatusArea = styled.div`
+  margin: 0 auto;
+  width: 80%;
 `
 
 const PanelArea = styled.div`
