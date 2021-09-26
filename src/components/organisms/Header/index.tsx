@@ -15,6 +15,7 @@ export const Header = () => (
 
 const Root = styled.footer`
   background-color: ${COLOR_FFFFFF};
+  padding-top: 15px;
   width: 100%;
 `
 

@@ -19,10 +19,10 @@ export const StarLevel: VFC<StarLevelProps> = (props) => {
   return (
     <Root>
       {[...Array(displayLevel)].map((_, index) => (
-        <StarRegularIcon key={index} />
+        <StarSolidIcon key={index} />
       ))}
       {[...Array(5 - displayLevel)].map((_, index) => (
-        <StarSolidIcon key={index} />
+        <StarRegularIcon key={index} />
       ))}
     </Root>
   )
