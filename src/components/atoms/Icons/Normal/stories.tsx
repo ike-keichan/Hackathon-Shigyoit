@@ -1,17 +1,17 @@
-import { VerySmileIcon } from './index'
+import { NormalIcon } from './index'
 
 export default {
-  component: VerySmileIcon,
-  title: 'atoms/Icons/VerySmileIcon',
+  component: NormalIcon,
+  title: 'atoms/Icons/NormalIcon',
 }
 
-const Component1 = () => <VerySmileIcon />
+const Component1 = () => <NormalIcon />
 
 export const Base = Component1.bind({})
 
 const Component2 = () => (
   <div style={{ height: '20px', width: '20px', color: 'red' }}>
-    <VerySmileIcon />
+    <NormalIcon />
   </div>
 )
 
@@ -19,7 +19,7 @@ export const RedSmall = Component2.bind({})
 
 const Component3 = () => (
   <div style={{ height: '100px', width: '100px', color: 'blue' }}>
-    <VerySmileIcon />
+    <NormalIcon />
   </div>
 )
 
