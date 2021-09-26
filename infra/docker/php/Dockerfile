@@ -1,4 +1,5 @@
 FROM php:7.4.20-fpm-buster
+# FROM node:16.10.0 as node
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 # timezone environment
@@ -11,7 +12,23 @@ ENV TZ=UTC \
   COMPOSER_ALLOW_SUPERUSER=1 \
   COMPOSER_HOME=/composer
 
+# # node command
+# COPY --from=node /usr/local/bin /usr/local/bin
+# # npm command
+# COPY --from=node /usr/local/lib /usr/local/lib
+# # yarn command
+# COPY --from=node /opt /opt
+
 COPY --from=composer:2.1.3 /usr/bin/composer /usr/bin/composer
+
+# Node.jsをインストール
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+
+# yarnをインストール
+# RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+# RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/+sources.list.d/yarn.list
+# RUN apt-get update && apt-get install yarn
 
 RUN apt-get update && \
   apt-get -y install git libicu-dev libonig-dev libzip-dev unzip locales && \
